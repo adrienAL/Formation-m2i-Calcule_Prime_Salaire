@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./index.css">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="form-group row">
+            <label for="txtNom" class="col-sm-2 col-form-label">Nom:</label>
+            <div class="col-sm-4 col-form-label">
+                <input type="text" class="form-control" id="txtNom" placeholder="Nom" name="txtNom">
+            </div>
+
+            <label for="txtPrenom" class="col-sm-2 col-form-label">Prénom:</label>
+            <div class="col-sm-4 col-form-label">
+                <input type="text" class="form-control" id="txtPrenom" placeholder="Prenom" name="txtPrenom">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="txtSalaire" class="col-sm-2 col-form-label">Salaire:</label>
+            <div class="col-sm-4 col-form-label">
+                <input type="text" class="form-control" id="txtSalaire" placeholder="Salaire" name="txtSalaire">
+            </div>
+
+            <label for="nbrEnfant" class="col-sm-2 col-form-label">nombre d'enfants:</label>
+            <div class="col-sm-4 col-form-label">
+                <input type="number" class="form-control" id="nbrEnfant" placeholder="nombre d'enfants" name="nbrEnfant"
+                    min="0" max="50">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="form-check-label col-sm-4 col-form-label">
+                <input class="form-check-input" type="checkbox"  id="chkun" onchange="Affiche(this)"> Prime Salaire <!--onclick="Cacher1(this)"-->
+            </label>
+            <label class="form-check-label col-sm-4 col-form-label">
+                <input class="form-check-input" type="checkbox" id="chkdeux" onchange="Affiche(this)"> Prime Enfants
+            </label>
+            <label class="form-check-label col-sm-4 col-form-label">
+                <input class="form-check-input" type="checkbox" id="chktrois" onchange="Affiche(this)"> Prime Total
+            </label>
+        </div>
+
+        <input type="button" id="bouton" value="BOUTON" class="btn btn-block btn-outline-primary" onclick="Traitement()" />
+
+        <div class="form-group row" id="un" style="visibility: hidden;">
+            <label for="txtPrimeSalaire" class="col-sm-2 col-form-label">Prime Salaire:</label>
+            <div class="col-sm-10 col-form-label">
+                <input type="text" class="form-control" id="txtPrimeSalaire" name="txtPrimeSalaire" readonly>
+            </div>
+        </div>
+
+        <div class="form-group row" id="deux" style="visibility: hidden;">
+            <label for="txtPrimeEnfant" class="col-sm-2 col-form-label">Prime enfants:</label>
+            <div class="col-sm-10 col-form-label">
+                <input type="text" class="form-control" id="txtPrimeEnfant" name="txtPrimeEnfant" readonly>
+            </div>
+        </div>
+
+        <div class="form-group row" id="trois" style="visibility: hidden;">
+            <label for="txtPrimeTotal" class="col-sm-2 col-form-label">Prime Total:</label>
+            <div class="col-sm-10 col-form-label">
+                <input type="text" class="form-control" id="txtPrimeTotal" name="txtPrimeTotal" readonly>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./salaire.js"></script>
+
+</body>
+
+</html>
